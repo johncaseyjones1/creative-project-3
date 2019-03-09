@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto|Cookie" rel="stylesheet">
+  <title>Save the Cook</title>
+</head>
+
+<body>
+  <div id="banner">
+    <h1>Save the Cook</h1>
+  </div>
+  <div id="app">
+
+
+    <div id="content">
+      <h2>{{recipeName}}</h2>
+      <div id="image">
+        <img src="/images/German_pancake.jpg" class="float-center">
+      </div>
+      <br><br>
+      <hr>
+      <h3>Ingredients</h3>
+      <li v-for="ingredient in ingredients">{{ingredient}}</li>
+      <br><br>
+      <h3>Directions</h3>
+      <li v-for="step in directions">{{step}}</li>
+      <br>
+
+
+      <star-rating v-bind:rating="getAvg" v-bind:increment="0.5" v-bind:show-rating="false" active-color="#F00" @rating-selected="setRating" @click="setRating"></star-rating>
+      <p>Average Rating: {{getAvg}}</p>
+      <h3>Add a Comment</h3>
+      <form v-on:submit.prevent="addComment">
+        <input v-model="addedName" placeholder="Name"></p>
+        <textarea v-model="addedComment"></textarea>
+        <br />
+        <button type="submit">Comment</button>
+      </form>
+      <h3>Comments</h3>
+      <div v-for="comment in comments[number]">
+        <hr>
+        <p>{{comment.text}}</p>
+        <p><i>-- {{comment.author}}</i> </p>
+        <p>{{time}}</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>
+  <script src="/moment.js"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>
