@@ -2,16 +2,28 @@ body {
   background: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   padding: 0px;
+  padding-bottom: 15px;
   margin: 0px;
 }
 
 #app {
   display: grid;
   grid-template-columns: auto 80% auto;
+  padding-bottom: 60px;
 }
 
 #content {
   grid-column: 2 / 3;
+}
+
+#app input {
+  width: 100%;
+  height: 2em;
+}
+
+#app textarea {
+  width: 100%;
+  height: 15em;
 }
 
 #image {
@@ -23,8 +35,10 @@ body {
 #image img {
   max-width: 100%;
   max-height: 400px;
-  grid-column: 2 / 3;
+  grid-column: 1 / 4;
   align-self: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 body li {
@@ -51,4 +65,14 @@ body li {
 
 body h2 {
   text-align: center;
+}
+
+#footer {
+  width: 100%;
+  bottom: 0px;
+  position: fixed;
+  background-color: #FFFFFF;
+  text-align: center;
+  color: #B3B3B3;
+  padding-top: 2%;
 }

@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=186824440394&autoLogAppEvents=1"></script>
   <div id="banner">
     <h1>Save the Cook</h1>
   </div>
@@ -46,7 +48,11 @@
         <p><i>-- {{comment.author}}</i> </p>
         <p>{{time}}</p>
       </div>
+      <div class="fb-like" data-href="http://creative3.techvaccine.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     </div>
+  </div>
+  <div id="footer">
+    <p>https://github.com/johncaseyjones1/cs260-creative-project</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
